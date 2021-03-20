@@ -29,12 +29,13 @@ namespace HotelListing
             }
             catch (Exception ex)
             {
-                Log.Fatal(ex, "Application Faild to Start");
+                Log.Fatal(ex, "Application Failed to start");
             }
             finally
             {
                 Log.CloseAndFlush();
             }
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

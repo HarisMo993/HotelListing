@@ -9,23 +9,23 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelListing.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210318231323_SeedingData")]
+    [Migration("20210106054927_SeedingData")]
     partial class SeedingData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
+                .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.4")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "5.0.1");
 
             modelBuilder.Entity("HotelListing.Data.Country", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -63,7 +63,7 @@ namespace HotelListing.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .UseIdentityColumn();
 
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
@@ -95,8 +95,8 @@ namespace HotelListing.Migrations
                         new
                         {
                             Id = 2,
-                            Address = "Geogre Town",
-                            CountryId = 2,
+                            Address = "George Town",
+                            CountryId = 3,
                             Name = "Comfort Suites",
                             Rating = 4.2999999999999998
                         },
@@ -105,7 +105,7 @@ namespace HotelListing.Migrations
                             Id = 3,
                             Address = "Nassua",
                             CountryId = 2,
-                            Name = "Gran Palldium",
+                            Name = "Grand Palldium",
                             Rating = 4.0
                         });
                 });

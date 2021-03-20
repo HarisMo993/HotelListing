@@ -29,22 +29,17 @@ namespace HotelListing.Migrations
             migrationBuilder.InsertData(
                 table: "Hotels",
                 columns: new[] { "Id", "Address", "CountryId", "Name", "Rating" },
-                values: new object[] { 2, "Geogre Town", 3, "Comfort Suites", 4.2999999999999998 });
+                values: new object[] { 3, "Nassua", 2, "Grand Palldium", 4.0 });
 
             migrationBuilder.InsertData(
                 table: "Hotels",
                 columns: new[] { "Id", "Address", "CountryId", "Name", "Rating" },
-                values: new object[] { 3, "Nassua", 2, "Gran Palldium", 4.0 });
+                values: new object[] { 2, "George Town", 3, "Comfort Suites", 4.2999999999999998 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DeleteData(
-                table: "Countries",
-                keyColumn: "Id",
-                keyValue: 3);
-
-            migrationBuilder.DeleteData(
                 table: "Hotels",
                 keyColumn: "Id",
                 keyValue: 1);
@@ -68,6 +63,11 @@ namespace HotelListing.Migrations
                 table: "Countries",
                 keyColumn: "Id",
                 keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "Countries",
+                keyColumn: "Id",
+                keyValue: 3);
         }
     }
 }
