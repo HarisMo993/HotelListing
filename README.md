@@ -1,2 +1,2 @@
 # HotelListing
-An Web API built using .NET Core 5.0
+Web API built using .NET Core 5.0
